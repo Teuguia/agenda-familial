@@ -1,3 +1,19 @@
+# Agenda Familial
+
+Application Laravel de gestion familiale : familles, membres, evenements, taches, listes de courses et notifications.
+
+## Hebergement Laravel Cloud
+
+Les fichiers de preparation au deploiement Laravel Cloud sont inclus :
+
+- `LARAVEL_CLOUD.md` : commandes Build/Deploy et procedure.
+- `.env.laravel-cloud.example` : base de variables d'environnement production.
+- `.github/workflows/laravel-cloud-deploy.yml` : deploy hook optionnel.
+
+Consulte `LARAVEL_CLOUD.md` avant le premier deploiement.
+
+---
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

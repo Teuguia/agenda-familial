@@ -1,0 +1,24 @@
+name: Deploy to Laravel Cloud
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Trigger Laravel Cloud deploy hook
+    runs-on: ubuntu-latest
+    env:
+      LARAVEL_CLOUD_DEPLOY_HOOK: ${{ secrets.LARAVEL_CLOUD_DEPLOY_HOOK }}
+
+    steps:
+      - name: Trigger deploy
+        run: |
+          if [ -z "$LARAVEL_CLOUD_DEPLOY_HOOK" ]; then
+            echo "LARAVEL_CLOUD_DEPLOY_HOOK is not configured; skipping deploy hook."
+            exit 0
+          fi
+
+          curl -fsS -X POST "${LARAVEL_CLOUD_DEPLOY_HOOK}?commit_hash=${GITHUB_SHA}"
